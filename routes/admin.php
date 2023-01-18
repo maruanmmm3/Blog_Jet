@@ -15,7 +15,10 @@ use App\Models\Category;
 
 //Crear Controller con rutas para CRUD :  php artisan make:controller Admin/CategoryController -r
 //Protegiendo una ruta
-Route::get('', [HomeController::class, 'index'])->middleware('can:admin.home')->name('admin.home'); //Ruta Admin - el '' Esta en la Parte de RouteServiceProvider prefix('admin')
+/* ->middleware('can:admin.home') */
+Route::get('', [HomeController::class, 'index'])->name('admin.home'); //Ruta Admin - el '' Esta en la Parte de RouteServiceProvider prefix('admin')
+
+Route::get('/bloger', [HomeController::class, 'bloger'])->name('bloger.entrada');
 
 Route::resource('users', UserController::class)->only(['index','edit','update'])->names('admin.users'); //Ruta para usuarios / only Para que solo genere esas rutas
 

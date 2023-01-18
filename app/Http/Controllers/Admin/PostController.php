@@ -45,6 +45,7 @@ class PostController extends Controller
         $post = Post::create($request->all());
 
         /* Para las imagenes */
+
         if ($request->file('file')) {
             $url = Storage::put('public/posts', $request->file('file'));
         
@@ -53,8 +54,8 @@ class PostController extends Controller
             ]);
         }
 
-        /* Relacion muchos a muchos taga */
-        if($request->tags){ /* pregunto si estoy enviando informacion de etiquetas */
+        
+        if($request->tags){  /* Relacion muchos a muchos taga */ /* pregunto si estoy enviando informacion de etiquetas */
             $post->tags()->attach($request->tags);
             /* attach Siempre tomara en la tabla central el id del post actual para el post_id  */
             /* para el campo de tag_id tomara lo que esta adentro de attach */

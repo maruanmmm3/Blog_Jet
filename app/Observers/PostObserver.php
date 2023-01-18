@@ -26,6 +26,7 @@ class PostObserver
     /* No vasta con crear este Observer tenemos que registrarlo
        Lo registramos en: Providers->EventServiceProvider 
        indicando el Modelo y el Observer y en el metodo boot registrarlo */
+       
 /* Antes del Delete */
     public function deleting(Post $post)
     {

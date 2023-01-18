@@ -8,7 +8,9 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 use Illuminate\Support\Facades\Event;
 
 use App\Models\Post;
+use App\Models\Solicitud;
 use App\Observers\PostObserver;
+use App\Observers\SolicitudObserver;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -31,6 +33,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         Post::observe(PostObserver::class);
+        Solicitud::observe(SolicitudObserver::class);
     }
 
     /**

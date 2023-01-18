@@ -18,7 +18,7 @@ class PostSeeder extends Seeder
     {
         //Todo esto es para generar una imagen por cada Post
         
-        $posts = Post::factory(100)->create();
+        $posts = Post::factory(30)->create();
 
         foreach ($posts as $post) {
             Image::factory(1)->create([

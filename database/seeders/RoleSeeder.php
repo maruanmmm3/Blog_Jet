@@ -21,7 +21,10 @@ class RoleSeeder extends Seeder
         /* El syncRoles es sacado del la pagina de SPATIE donde hay metodos para asignar roles y permisos */
         /* Emos agregado el campo 'descripcion' alli pondremos para que el usuario entienda el nombre del permiso */
         Permission::create(['name' => 'admin.home',
-                            'descripcion' => 'Ver el dashboard'])->syncRoles([$role1, $role2]);
+                            'descripcion' => 'Ver el dashboard'])->syncRoles([$role1]);//Solo Admin
+                            
+        Permission::create(['name' => 'bloger.entrada',
+                            'descripcion' => 'Ver Dashboard Bloger'])->syncRoles([$role2]);//Crear Aqui un dashboard para solo el suario autentificado
 
         Permission::create(['name' => 'admin.users.index',
                             'descripcion' => 'Ver listado de usuarios'])->syncRoles([$role1]);

@@ -345,6 +345,12 @@ return [
             'icon' => 'fas fa-tags',
             'can'   => 'admin.tags.index'
         ],
+        [
+            'text'       => 'Ver Solicitudes',
+            'route'        => 'admin.solicituds.index',
+            'icon'       => 'fas fa-inbox',
+            'can'        => 'admin.posts.create'
+        ],
         ['header' => 'OPCIONES DE BLOG'],
         [
             'text'       => 'Lista de Post',
@@ -358,6 +364,7 @@ return [
             'icon'       => 'fas fa-fw fa-file',
             'can'        => 'admin.posts.create'
         ],
+        /* crear ver tus propios post solo los tullos */
     ],
 
     /*

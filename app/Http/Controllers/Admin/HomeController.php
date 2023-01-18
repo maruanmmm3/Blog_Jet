@@ -31,4 +31,8 @@ class HomeController extends Controller
     //1-Post publicados y borador en grafico de pastel
     //2-Post por Categorias cantidad por cada Categoria
     //3-
-}
+
+    public function bloger(){
+        return view('users.index');
+    }
+} 

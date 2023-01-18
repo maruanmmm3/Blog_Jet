@@ -11,13 +11,23 @@
     <div class="container">
 
         <div class="row row-cols-2">
-            <div class="col 6">
-                <canvas id="myChart"></canvas>
-            </div>
-        
-            <div class="col 6">
-                <canvas id="myChart2"></canvas>
-            </div>
+            {{-- @if (user->auth()->)
+                
+            @else
+                
+            @endif --}}
+          {{-- Hacer que los ususarios bloguer no vean los graficos de barra --}}
+            @can('admin.home')
+                <div class="col 6">
+                    <canvas id="myChart"></canvas>
+                </div>
+            @endcan
+                
+            @can('admin.home')
+                <div class="col 6">
+                    <canvas id="myChart2"></canvas>
+                </div>
+            @endcan
         </div>
         
     </div>
